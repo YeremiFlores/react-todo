@@ -1,13 +1,12 @@
 import IconMoon from "./icons/IconMoon"
 import IconSun from "./icons/IconSun"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 const initialStateDarkMode = localStorage.getItem('theme') === 'dark'
 
 const Header = () => {
 
-  const [darkMode, setDarkMode] = useState(initialStateDarkMode)
-  
+  const [darkMode, setDarkMode] = useState(initialStateDarkMode)  
   useEffect(() => {
     if(darkMode){
       document.documentElement.classList.add('dark')
@@ -24,7 +23,7 @@ const Header = () => {
           <h1 className="uppercase text-white text-2xl font-semibold tracking-[0.3em]">Todo</h1>
         <button
         onClick={() => setDarkMode(!darkMode)}
-        > 
+        >
           {
             darkMode ? <IconSun className="fill-white"/> : <IconMoon className="fill-white"/>
           }
